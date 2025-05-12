@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Headphone Request">3b6c2593839922108afdb9c6feaad3f1</sc_cat_item>
+        <sc_catalog display_value="Technical Catalog">742ce428d7211100f2d224837e61036d</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>raj.soni</sys_created_by>
+        <sys_created_on>2025-05-09 10:23:33</sys_created_on>
+        <sys_id>1fac6593839922108afdb9c6feaad339</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Technical Catalog.Headphone Request</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_1fac6593839922108afdb9c6feaad339</sys_update_name>
+        <sys_updated_by>raj.soni</sys_updated_by>
+        <sys_updated_on>2025-05-09 10:23:33</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>
