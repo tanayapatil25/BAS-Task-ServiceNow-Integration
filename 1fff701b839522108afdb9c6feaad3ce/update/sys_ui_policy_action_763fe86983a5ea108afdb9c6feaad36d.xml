@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field>short_description</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-16 05:41:40</sys_created_on>
+        <sys_id>763fe86983a5ea108afdb9c6feaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>short_description</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_ui_policy_action_763fe86983a5ea108afdb9c6feaad36d</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-16 05:41:40</sys_updated_on>
+        <table>incident</table>
+        <ui_policy display_value="Make assignment group and short description non editable on child incident.">890fa46983a5ea108afdb9c6feaad3e2</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=763fe86983a5ea108afdb9c6feaad36d"/>
+</record_update>
