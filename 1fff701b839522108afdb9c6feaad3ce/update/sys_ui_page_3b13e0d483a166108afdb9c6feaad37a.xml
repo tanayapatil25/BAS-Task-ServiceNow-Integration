@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function showConfirmationDialog() {
+    document.getElementById('confirmationDialog').style.display = 'block';
+}
+ 
+function closeDialog() {
+    document.getElementById('confirmationDialog').style.display = 'none';
+}
+ 
+function submitForm() {
+    closeDialog(); // Hide dialog after clicking Yes
+ 
+    var username = document.getElementById('username').value;
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+    var country = document.getElementById('country').value;
+    var photo = document.getElementById('photo').files[0]; // Get file
+ 
+    // Validate required fields
+    if (username === '' || firstName === '' || lastName === '' || password === '' || confirmPassword === '') {
+        alert('Please fill all required fields.');
+        return;
+    }
+ 
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+    }
+ 
+    // Create FormData object to send file
+    var formData = new FormData();
+    formData.append('sysparm_name', 'createUser');
+    formData.append('username', username);
+    formData.append('firstName', firstName);
+    formData.append('lastName', lastName);
+    formData.append('password', password);
+    formData.append('country', country);
+    if (photo) {
+        formData.append('photo', photo);
+    }
+ 
+    var ga = new GlideAjax('UserCreationModel');
+    for (var pair of formData.entries()) {
+        ga.addParam(pair[0], pair[1]);
+    }
+ 
+    ga.getXML(updateResponse);
+}
+ 
+function updateResponse(response) {
+    var result = response.responseXML.documentElement.getAttribute("answer");
+    alert(result);
+   
+    if (result.includes('successfully')) {
+        document.getElementById('userCreationForm').reset();
+    }
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint/>
+        <html><![CDATA[<form id="userCreationForm">
+    <table>
+        <tr><td>User Name:</td><td><input type="text" id="username" /></td></tr>
+        <tr><td>First Name:</td><td><input type="text" id="firstName" /></td></tr>
+        <tr><td>Last Name:</td><td><input type="text" id="lastName" /></td></tr>
+        <tr><td>Password:</td><td><input type="password" id="password" /></td></tr>
+        <tr><td>Confirm Password:</td><td><input type="password" id="confirmPassword" /></td></tr>
+        <tr><td>Country:</td>
+            <td>
+                <select id="country">
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Germany">Germany</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td>Photo:</td><td><input type="file" id="photo" /></td></tr>
+    </table>
+ 
+    <button type="button" onclick="showConfirmationDialog()" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">YES</button>
+ 
+    <button type="button" onclick="cancelForm()" style="background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">NO</button>
+ 
+</form>
+ 
+<!-- Confirmation Dialog Box -->
+<div id="confirmationDialog" style="display: none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid black; text-align: center;">
+    <p>Are you sure you want to submit the form?</p>
+    <button onclick="submitForm()">Yes</button>
+    <button onclick="closeDialog()">No</button>
+</div>]]></html>
+        <name>ui_page_demo </name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>raj.soni</sys_created_by>
+        <sys_created_on>2025-05-12 07:37:32</sys_created_on>
+        <sys_id>3b13e0d483a166108afdb9c6feaad37a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ui_page_demo </sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_ui_page_3b13e0d483a166108afdb9c6feaad37a</sys_update_name>
+        <sys_updated_by>raj.soni</sys_updated_by>
+        <sys_updated_on>2025-05-12 07:37:32</sys_updated_on>
+    </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>3b13e0d483a166108afdb9c6feaad37a</id>
+        <sys_created_by>raj.soni</sys_created_by>
+        <sys_created_on>2025-05-12 07:37:30</sys_created_on>
+        <sys_id>9873e0d483a166108afdb9c6feaad32d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>raj.soni</sys_updated_by>
+        <sys_updated_on>2025-05-12 07:37:30</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
