@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>100</order>
+        <published_ref/>
+        <question display_value="Your Department">c368482a836122508afdb9c6feaad3e5</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-19 05:28:22</sys_created_on>
+        <sys_id>f0e884aa836122508afdb9c6feaad301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Finance</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>question_choice_f0e884aa836122508afdb9c6feaad301</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-19 05:28:22</sys_updated_on>
+        <text>Finance</text>
+        <value>finance</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=f0e884aa836122508afdb9c6feaad301"/>
+</record_update>
