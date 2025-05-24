@@ -8,7 +8,7 @@
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>num</name>
+        <name>Colour the Incident</name>
         <order/>
         <script><![CDATA[function addColoredDot(color) {
     var incidentNumberField = g_form.getElement('number');
@@ -68,15 +68,15 @@ function updateCampus(response) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>aa20234883b5a2108afdb9c6feaad389</sys_id>
-        <sys_mod_count>24</sys_mod_count>
-        <sys_name>num</sys_name>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Colour the Incident</sys_name>
         <sys_overrides/>
         <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
         <sys_update_name>sys_script_client_aa20234883b5a2108afdb9c6feaad389</sys_update_name>
         <sys_updated_by>arshad.ansari</sys_updated_by>
-        <sys_updated_on>2025-05-24 13:51:42</sys_updated_on>
+        <sys_updated_on>2025-05-24 14:58:49</sys_updated_on>
         <table>incident</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>

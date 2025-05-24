@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="incident">stateCHANGESTO7^EQ<item display_value="Closed" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="false" value="7"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Incident closed only if all child closed</name>
+        <order>110</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    var childTask = new GlideRecord('incident');
+    childTask.addQuery('parent_incident', current.getUniqueValue());
+    childTask.addQuery('state', '!=', '7'); // not closed
+    childTask.query();
+
+    var arr = [];
+    while (childTask.next()) {
+        arr.push(childTask.getValue('number'));
+    }
+
+    if (arr.length > 0) {
+        gs.addErrorMessage('Cannot update the parent Incident until all child Incidents are closed: ' + arr.join(', '));
+        current.state = previous.state;
+        current.incident_state = previous.incident_state;
+        current.setAbortAction(true);
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 11:53:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7430d7c08375a2108afdb9c6feaad3e7</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Incident closed only if all child closed</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_script_7430d7c08375a2108afdb9c6feaad3e7</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 14:59:08</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=7430d7c08375a2108afdb9c6feaad3e7"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>7430d7c08375a2108afdb9c6feaad3e7</id>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 11:53:24</sys_created_on>
+        <sys_id>7d1157008375a2108afdb9c6feaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 11:53:24</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
