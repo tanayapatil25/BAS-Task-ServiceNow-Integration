@@ -15,34 +15,54 @@
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Autofill ReqFor and Manager</name>
+        <name>Autoset Reference Field Manager and Req</name>
         <order/>
         <published_ref/>
         <script><![CDATA[function onLoad() {
     //Type appropriate comment here, and begin script below
-    g_form.setValue('requ', g_user.userID);
-	var userSysID = g_user.userID;
-	var grUser = new GlideRecord('sys_user');
-	if(grUser.get(userSysID)){
-		var managerSysID = grUser.manager;
-		g_form.setValue('manager',managerSysID)
-	}
+    g_form.setValue('requested_for', g_user.userID);
+    var userSysID = g_user.userID;
+
+    var ga = new GlideAjax('GetManagerSI');
+
+    ga.addParam('sysparm_name', 'getManager');
+
+    ga.addParam('sysparm_sys_id', userSysID);
+
+    ga.getXML(updateManager);
+}
+
+function updateManager(response) {
+
+    var answer = response.responseXML.documentElement.getAttribute("answer");
+	
+    if (answer) {
+
+              var returneddata = JSON.parse(answer);
+              g_form.setValue("manager", returneddata.manager);
+
+      } else {
+
+            alert("Manager Not Found!");
+
+      }
+
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
-        <sys_created_by>arshad.ansari</sys_created_by>
-        <sys_created_on>2025-05-19 05:56:48</sys_created_on>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-19 05:48:00</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>a92f88e283a122508afdb9c6feaad37b</sys_id>
-        <sys_mod_count>10</sys_mod_count>
-        <sys_name>Autofill ReqFor and Manager</sys_name>
+        <sys_id>445d806283a122508afdb9c6feaad32a</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>Autoset Reference Field Manager and Req</sys_name>
         <sys_overrides/>
         <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
-        <sys_update_name>catalog_script_client_a92f88e283a122508afdb9c6feaad37b</sys_update_name>
+        <sys_update_name>catalog_script_client_445d806283a122508afdb9c6feaad32a</sys_update_name>
         <sys_updated_by>arshad.ansari</sys_updated_by>
-        <sys_updated_on>2025-05-19 06:15:42</sys_updated_on>
+        <sys_updated_on>2025-05-24 11:28:55</sys_updated_on>
         <table/>
         <type>onLoad</type>
         <ui_type>10</ui_type>
