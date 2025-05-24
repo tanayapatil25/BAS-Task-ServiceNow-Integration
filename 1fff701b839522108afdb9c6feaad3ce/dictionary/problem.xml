@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="live_feed=true" audit="true" db_object_id="2bb6b3ae5c8022105590c762d23e6303" defaultsort="-1" extends="task" label="Problem" max_length="40" name="problem" text_index="true" type="collection">
+        <element label="Vendor company official Email ID" max_length="1000000" name="u_vendor_company_official_email_id" type="string"/>
+    </element>
+</database>

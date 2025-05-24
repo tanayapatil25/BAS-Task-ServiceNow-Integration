@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_vendor_company_official_email_id" label="Vendor company official Email ID" language="en" table="problem">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_vendor_company_official_email_id</element>
+            <help/>
+            <hint/>
+            <label>Vendor company official Email ID</label>
+            <language>en</language>
+            <name>problem</name>
+            <plural>Vendor company official Email IDs</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>arshad.ansari</sys_created_by>
+            <sys_created_on>2025-05-24 11:40:39</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Vendor company official Email ID</sys_name>
+            <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+            <sys_update_name>sys_documentation_problem_u_vendor_company_official_email_id_en</sys_update_name>
+            <sys_updated_by>arshad.ansari</sys_updated_by>
+            <sys_updated_on>2025-05-24 11:40:39</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
