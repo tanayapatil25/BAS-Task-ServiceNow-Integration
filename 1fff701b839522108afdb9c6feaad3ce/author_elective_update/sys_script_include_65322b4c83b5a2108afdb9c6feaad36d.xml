@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.getSLAPercentage</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>getSLAPercentage</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var getSLAPercentage = Class.create();
+getSLAPercentage.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getPercentage: function() {
+        var inc_id = this.getParameter('sysparm_sys_id');
+        var number = this.getParameter('sysparm_number');
+        var slapercentage = 0;
+        var gr_SLA = new GlideRecord('task_sla');
+        gr_SLA.addEncodedQuery('task=' + inc_id);
+        gr_SLA.query();
+        if (gr_SLA.next()) {
+            slaPercentage = (gr_SLA.business_percentage);
+        }
+        return slapercentage;
+    },
+    type: 'getSLAPercentage'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 13:08:12</sys_created_on>
+        <sys_id>65322b4c83b5a2108afdb9c6feaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>getSLAPercentage</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_script_include_65322b4c83b5a2108afdb9c6feaad36d</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 13:08:12</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</application>
+        <file_path/>
+        <instance_id>d57f3d84fff062d0c812f8e4fc4fd9ba</instance_id>
+        <instance_name>dev316200</instance_name>
+        <name>sys_script_include_65322b4c83b5a2108afdb9c6feaad36d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.getSLAPercentage&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;getSLAPercentage&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var getSLAPercentage = Class.create();
+getSLAPercentage.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getPercentage: function() {
+        var inc_id = this.getParameter('sysparm_sys_id');
+        var number = this.getParameter('sysparm_number');
+        var slapercentage = 0;
+        var gr_SLA = new GlideRecord('task_sla');
+        gr_SLA.addEncodedQuery('task=' + inc_id);
+        gr_SLA.query();
+        if (gr_SLA.next()) {
+            slaPercentage = (gr_SLA.business_percentage);
+        }
+        return slapercentage;
+    },
+    type: 'getSLAPercentage'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;arshad.ansari&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-24 13:08:12&lt;/sys_created_on&gt;&lt;sys_id&gt;65322b4c83b5a2108afdb9c6feaad36d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;getSLAPercentage&lt;/sys_name&gt;&lt;sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce"&gt;1fff701b839522108afdb9c6feaad3ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BAS Task Global"&gt;1fff701b839522108afdb9c6feaad3ce&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_65322b4c83b5a2108afdb9c6feaad36d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;arshad.ansari&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-05-24 13:08:12&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-714404699</payload_hash>
+        <record_name>getSLAPercentage</record_name>
+        <reverted_from/>
+        <source>14804d5b839522108afdb9c6feaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 13:08:13</sys_created_on>
+        <sys_id>f9322b4c83b5a2108afdb9c6feaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1970268835b0000001</sys_recorded_at>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 13:08:13</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>fd322b4c5ab5a210f523445b2730eb6e</update_guid>
+        <update_guid_history>fd322b4c5ab5a210f523445b2730eb6e:-714404699</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 13:08:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>354a580942774a30be4d28baaf006690</sys_id>
+        <sys_metadata>65322b4c83b5a2108afdb9c6feaad36d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>getSLAPercentage</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_scope_delete display_value="">3770c249cd824c4c8da19a93c8f94a09</sys_scope_delete>
+        <sys_update_name>sys_script_include_65322b4c83b5a2108afdb9c6feaad36d</sys_update_name>
+        <sys_update_version display_value="sys_script_include_65322b4c83b5a2108afdb9c6feaad36d">f9322b4c83b5a2108afdb9c6feaad36f</sys_update_version>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 13:08:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Colour the Incident</name>
+        <order/>
+        <script><![CDATA[function addColoredDot(color) {
+    var incidentNumberField = g_form.getElement('number');
+    if (incidentNumberField) {
+        incidentNumberField.insertAdjacentHTML('beforebegin', "<p>Incident Type - </p><p style='color: " + color + "; font-size: 20px; margin-right: 5px;'>&#x2022; </p>");
+    }
+}
+
+function addColoredDot1(color) {
+    var incidentNumberField = g_form.getElement('number');
+    if (incidentNumberField) {
+        incidentNumberField.insertAdjacentHTML('beforebegin',
+            "<p style='color:" + color + "; font-size: 20px; margin-right: 5px;' >&#x2022; < /p>");
+    }
+}
+
+function onLoad() {
+    //Type appropriate comment here, and begin script below
+    var priority = g_form.getValue('priority').toString();
+    // Apply Priority-Based Coloring 
+    if (priority === "1") {
+        addColoredDot('red');
+    } else if (priority === "2") {
+        addColoredDot('orange');
+    }
+
+    var ga = new GlideAjax('getSLAPercentage');
+    ga.addParam('sysparm_name', 'getPercentage');
+    ga.addParam('sys_id', g_form.getUniqueValue());
+    ga.getXML(updateCampus);
+
+}
+
+function updateCampus(response) {
+    var answer = response.responseXML.documentElement.getAttribute("answer");
+    answer = Number(answer);
+    if (answer >= 75) {
+        addColoredDot1('red');
+    } else if (answer >= 50) {
+        addColoredDot1('orange');
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 12:39:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0bf8d30083b5a2108afdb9c6feaad35d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Colour the Incident</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_script_client_0bf8d30083b5a2108afdb9c6feaad35d</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 12:58:27</sys_updated_on>
+        <table>incident</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</application>
+        <file_path/>
+        <instance_id>d57f3d84fff062d0c812f8e4fc4fd9ba</instance_id>
+        <instance_name>dev316200</instance_name>
+        <name>sys_script_client_0bf8d30083b5a2108afdb9c6feaad35d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Colour the Incident&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function addColoredDot(color) {
+    var incidentNumberField = g_form.getElement('number');
+    if (incidentNumberField) {
+        incidentNumberField.insertAdjacentHTML('beforebegin', "&lt;p&gt;Incident Type - &lt;/p&gt;&lt;p style='color: " + color + "; font-size: 20px; margin-right: 5px;'&gt;&amp;#x2022; &lt;/p&gt;");
+    }
+}
+
+function addColoredDot1(color) {
+    var incidentNumberField = g_form.getElement('number');
+    if (incidentNumberField) {
+        incidentNumberField.insertAdjacentHTML('beforebegin',
+            "&lt;p style='color:" + color + "; font-size: 20px; margin-right: 5px;' &gt;&amp;#x2022; &lt; /p&gt;");
+    }
+}
+
+function onLoad() {
+    //Type appropriate comment here, and begin script below
+    var priority = g_form.getValue('priority').toString();
+    // Apply Priority-Based Coloring 
+    if (priority === "1") {
+        addColoredDot('red');
+    } else if (priority === "2") {
+        addColoredDot('orange');
+    }
+
+    var ga = new GlideAjax('getSLAPercentage');
+    ga.addParam('sysparm_name', 'getPercentage');
+    ga.addParam('sys_id', g_form.getUniqueValue());
+    ga.getXML(updateCampus);
+
+}
+
+function updateCampus(response) {
+    var answer = response.responseXML.documentElement.getAttribute("answer");
+    answer = Number(answer);
+    if (answer &gt;= 75) {
+        addColoredDot1('red');
+    } else if (answer &gt;= 50) {
+        addColoredDot1('orange');
+    }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;arshad.ansari&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-24 12:39:32&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;0bf8d30083b5a2108afdb9c6feaad35d&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Colour the Incident&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce"&gt;1fff701b839522108afdb9c6feaad3ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BAS Task Global"&gt;1fff701b839522108afdb9c6feaad3ce&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_0bf8d30083b5a2108afdb9c6feaad35d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;arshad.ansari&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-05-24 12:58:27&lt;/sys_updated_on&gt;&lt;table&gt;incident&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1053739448</payload_hash>
+        <record_name>Colour the Incident</record_name>
+        <reverted_from/>
+        <source>14804d5b839522108afdb9c6feaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 12:58:27</sys_created_on>
+        <sys_id>f6ff974483b5a2108afdb9c6feaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197025f93580000001</sys_recorded_at>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 12:58:27</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>faff97445db5a210f04ac975c32404c7</update_guid>
+        <update_guid_history>faff97445db5a210f04ac975c32404c7:1053739448,69abd38091b5a2105fd7498df6a8b9c0:-1154751445</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 12:59:27</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>2c73b4e05a9b4bf8830edc3e25fb3c40</sys_id>
+        <sys_metadata>0bf8d30083b5a2108afdb9c6feaad35d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Colour the Incident</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_parent display_value="Incident">40c6b3ae5c8022105590c762d23e6377</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_scope_delete display_value="">3770c249cd824c4c8da19a93c8f94a09</sys_scope_delete>
+        <sys_update_name>sys_script_client_0bf8d30083b5a2108afdb9c6feaad35d</sys_update_name>
+        <sys_update_version display_value="sys_script_client_0bf8d30083b5a2108afdb9c6feaad35d">f6ff974483b5a2108afdb9c6feaad3c8</sys_update_version>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 12:59:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
