@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions/>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>110</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>false</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+
+}]]></script_true>
+        <set_values/>
+        <short_description>MakeCiMandatory</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 17:36:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bf7f9050833da2108afdb9c6feaad3b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MakeCiMandatory</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_ui_policy_bf7f9050833da2108afdb9c6feaad3b4</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 17:36:25</sys_updated_on>
+        <table>incident</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+</record_update>

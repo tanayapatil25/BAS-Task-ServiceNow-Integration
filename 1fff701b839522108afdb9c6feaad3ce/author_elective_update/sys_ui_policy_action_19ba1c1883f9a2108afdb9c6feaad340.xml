@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field>opened_at</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 17:15:23</sys_created_on>
+        <sys_id>19ba1c1883f9a2108afdb9c6feaad340</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>opened_at</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_ui_policy_action_19ba1c1883f9a2108afdb9c6feaad340</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 17:15:23</sys_updated_on>
+        <table>incident</table>
+        <ui_policy display_value="MakeReadOnlyOnIncident">315a185883f9a2108afdb9c6feaad3b3</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="DELETE" query="documentkey=19ba1c1883f9a2108afdb9c6feaad340"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</application>
+        <file_path/>
+        <instance_id>d57f3d84fff062d0c812f8e4fc4fd9ba</instance_id>
+        <instance_name>dev316200</instance_name>
+        <name>sys_ui_policy_action_19ba1c1883f9a2108afdb9c6feaad340</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>true</disabled><field>opened_at</field><field_message/><field_message_type>none</field_message_type><mandatory>ignore</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>arshad.ansari</sys_created_by><sys_created_on>2025-05-24 17:15:23</sys_created_on><sys_id>19ba1c1883f9a2108afdb9c6feaad340</sys_id><sys_mod_count>0</sys_mod_count><sys_name>opened_at</sys_name><sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package><sys_policy/><sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope><sys_update_name>sys_ui_policy_action_19ba1c1883f9a2108afdb9c6feaad340</sys_update_name><sys_updated_by>arshad.ansari</sys_updated_by><sys_updated_on>2025-05-24 17:15:23</sys_updated_on><table>incident</table><ui_policy display_value="MakeReadOnlyOnIncident">315a185883f9a2108afdb9c6feaad3b3</ui_policy><value/><value_action>ignore</value_action><visible>ignore</visible></sys_ui_policy_action><sys_translated_text action="delete_multiple" query="documentkey=19ba1c1883f9a2108afdb9c6feaad340"/></record_update>]]></payload>
+        <payload_hash>1471115600</payload_hash>
+        <record_name>opened_at</record_name>
+        <reverted_from/>
+        <source>14804d5b839522108afdb9c6feaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 17:15:23</sys_created_on>
+        <sys_id>2eca585883f9a2108afdb9c6feaad351</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197034acf150000001</sys_recorded_at>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 17:15:23</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>22ca5858a1f9a2101cc96b975214a251</update_guid>
+        <update_guid_history>22ca5858a1f9a2101cc96b975214a251:1471115600</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 17:16:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>382c17c7b2f045c6929e486125dd1921</sys_id>
+        <sys_metadata>19ba1c1883f9a2108afdb9c6feaad340</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>opened_at</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_parent display_value="">315a185883f9a2108afdb9c6feaad3b3</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_scope_delete display_value="">3770c249cd824c4c8da19a93c8f94a09</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_19ba1c1883f9a2108afdb9c6feaad340</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_19ba1c1883f9a2108afdb9c6feaad340">2eca585883f9a2108afdb9c6feaad351</sys_update_version>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 17:16:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

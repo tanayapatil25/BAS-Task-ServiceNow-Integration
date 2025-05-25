@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>caller_id</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Highlight VIP Caller</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == oldValue) return;
+
+    g_form.getReference('caller_id', vipCallerCallback);
+}
+
+function vipCallerCallback(caller) {
+    var callerLabel = g_form.getLabel('caller_id');
+    var callerField = g_form.getDisplayBox('caller_id');
+
+    if (!callerLabel || !callerField) return;
+
+    // Check for VIP status
+    if (caller.vip == 'true' || caller.vip == true || caller.vip == '1') {
+        var bgPosition = "95% 55%";
+        if (document.documentElement.getAttribute('data-doctype') == 'true') {
+            bgPosition = "5% 45%";
+        }
+
+        callerLabel.style.backgroundImage = "url(images/icons/user.gif)";
+        callerLabel.style.backgroundRepeat = "no-repeat";
+        callerLabel.style.backgroundPosition = bgPosition;
+        callerLabel.style.paddingLeft = "30px";
+
+        callerField.style.color = "red";
+    } else {
+        callerLabel.style.backgroundImage = "";
+        callerLabel.style.paddingLeft = "";
+        callerField.style.color = "";
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-24 17:26:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8a0c501c83f9a2108afdb9c6feaad3a6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Highlight VIP Caller</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_script_client_8a0c501c83f9a2108afdb9c6feaad3a6</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-24 17:33:03</sys_updated_on>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="email_client=true,hasWorkflow=true,live_feed=true,all_tables.query_hints=true" audit="true" db_object_id="40c6b3ae5c8022105590c762d23e6377" extends="task" label="Incident" max_length="40" name="incident" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Vendor Support Level" max_length="40" name="u_vsl" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Address" max_length="40" name="u_vendor_address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Number" max_length="40" name="u_vendor_number" type="string"/>
+        <element label="Document ID" max_length="1000000" name="u_document_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Number of Users affected" max_length="40" name="u_users_affected" type="string">
+            <choice>
+                <element inactive_on_update="false" label="None of the user" sequence="2" value="none"/>
+                <element inactive_on_update="false" label="All" sequence="0" value="all"/>
+                <element inactive_on_update="false" label="Limited" sequence="1" value="limited"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Critical Since" max_length="40" name="u_critical_since" read_only="true" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Worked By" max_length="40" name="u_worked_by" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Internal Support" sequence="1" value="internal_support"/>
+                <element inactive_on_update="false" label="Vendor" sequence="0" value="vendor"/>
+                <element inactive_on_update="false" label="Infra Team" sequence="2" value="infra_team"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Vendor SLA Agreement" max_length="40" name="u_vsa" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Email" max_length="40" name="u_vendor_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Justification" max_length="255" name="u_justification" type="string_full_utf8"/>
+        <element attributes="encode_utf8=false" label="Critical Incident Manager" max_length="32" name="u_critical_manager" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Expected Resolution Time" max_length="40" name="u_ert" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Vendor Name" max_length="40" name="u_vendor_name" type="string"/>
+    </element>
+</database>

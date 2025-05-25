@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_worked_by</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>If Worked By is Vendor the Show Fields</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue =='') {
+        g_form.setVisible('u_vendor_name', false);
+        g_form.setVisible('u_vendor_number', false);
+        g_form.setVisible('u_vendor_address', false);
+        g_form.setVisible('u_vendor_email', false);
+        g_form.setVisible('u_ert', false);
+        return;
+    }
+    if (newValue == 'vendor') {
+        g_form.setVisible('u_vendor_name', true);
+        g_form.setVisible('u_vendor_number', true);
+        g_form.setVisible('u_vendor_address', true);
+        g_form.setVisible('u_vendor_email', true);
+        g_form.setVisible('u_ert', true);
+    } else {
+        g_form.setVisible('u_vendor_name', false);
+        g_form.setVisible('u_vendor_number', false);
+        g_form.setVisible('u_vendor_address', false);
+        g_form.setVisible('u_vendor_email', false);
+        g_form.setVisible('u_ert', false);
+        //Type appropriate comment here, and begin script below
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>arshad.ansari</sys_created_by>
+        <sys_created_on>2025-05-25 05:42:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>96044bd88379e2108afdb9c6feaad310</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>If Worked By is Vendor the Show Fields</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_script_client_96044bd88379e2108afdb9c6feaad310</sys_update_name>
+        <sys_updated_by>arshad.ansari</sys_updated_by>
+        <sys_updated_on>2025-05-25 06:03:34</sys_updated_on>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
