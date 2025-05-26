@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_cart_item</collection>
+        <condition>current.cat_item.name == 'Headphone Request'</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Restrict Sales from Headphone Request</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+    var userId = gs.getUserID();
+    var userGR = new GlideRecord('sys_user');
+    if (userGR.get(userId)) {
+        var deptGR = new GlideRecord('cmn_department');
+        if (deptGR.get(userGR.department)) {
+            if (deptGR.name == 'Sales') {
+                gs.addErrorMessage("Sales department users cannot request Headphone.");
+                current.setAbortAction(true);
+            }
+        }
+    }
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-26 03:02:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e91aaba083b166108afdb9c6feaad3c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Restrict Sales from Headphone Request</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sys_script_e91aaba083b166108afdb9c6feaad3c7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-26 03:02:08</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=e91aaba083b166108afdb9c6feaad3c7"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e91aaba083b166108afdb9c6feaad3c7</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-26 03:02:07</sys_created_on>
+        <sys_id>faaa2fa083b166108afdb9c6feaad34b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-26 03:02:07</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
