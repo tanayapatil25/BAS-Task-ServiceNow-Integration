@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Order guide for headphone request">27b5aba8837166108afdb9c6feaad3e1</sc_cat_item>
+        <sc_category display_value="Accessories">d258e415c611227a0013072db7288863</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-26 02:41:11</sys_created_on>
+        <sys_id>dce5632c837166108afdb9c6feaad3d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Accessories.Order guide for headphone request</sys_name>
+        <sys_package display_value="BAS Task Global" source="1fff701b839522108afdb9c6feaad3ce">1fff701b839522108afdb9c6feaad3ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BAS Task Global">1fff701b839522108afdb9c6feaad3ce</sys_scope>
+        <sys_update_name>sc_cat_item_category_dce5632c837166108afdb9c6feaad3d8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-26 02:41:11</sys_updated_on>
+    </sc_cat_item_category>
+</record_update>
